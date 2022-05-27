@@ -12,31 +12,13 @@
     <title>Barbeiros</title>
   </head>
   <body>
-<div class="wrapper">
-    <div class="sidebar">
-        <img src="./static/img/logo.png" alt="">
-        <ul>
-            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="/meus_agendamentos"><i class="fas fa-project-diagram"></i>Agendamentos</a></li>
-            <li><a href="/deslogar"><i class="fas fa-solid fa-person-running"></i>Sair</a></li>
-        </ul> 
-        <div class="social_media">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-    <div class="main_content"> 
-        <div class="info">
-          <div>
-			<div class="month">
-  <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
-    <li>{{month}}<br><span style="font-size:18px">{{dates_of_month[0].year}}</span></li>
-  </ul>
-</div>
+    <header class="main-header">
+      <nav id="navbar-container">
+        <img class="logo" src="../static/img/logo.png" alt="">
+
+        <a href="/deslogar" id="deslogar">Sair</a>
+      </nav>
+    </header>
 
     <div class="container">
         {% for barbeiro in barbeiros %}
