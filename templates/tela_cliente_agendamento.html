@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tela-cliente.css') }}">
+    <title>Agendamentos</title>
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/d117ad3b9e.js" crossorigin="anonymous"></script>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <img src="./static/img/logo.png" alt="">
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="/meus_agendamentos"><i class="fas fa-project-diagram"></i>Agendamentos</a></li>
+            <li><a href="/deslogar"><i class="fas fa-solid fa-person-running"></i>Sair</a></li>
+        </ul> 
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="main_content"> 
+        <div class="info">
+          <div>
+			<div class="month">
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>{{month}}<br><span style="font-size:18px">{{dates_of_month[0].year}}</span></li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>SEG</li>
+  <li>TER</li>
+  <li>QUA</li>
+  <li>QUI</li>
+  <li>SEX</li>
+  <li>SÁB</li>
+  <li>DOM</li>
+</ul>
+
+<ul class="days">
+  <form action="/tela_cliente/agendamento/{{barbeiro.search_id}}" autocomplete="on",  method="POST">
+  {% for i in range(dates_of_month[0].weekday())%}
+  <li></li>
+  {% endfor %}
+    {% for d in dates_of_month %}
+      {% if (d - date_today).days >= 0 and d.isoformat() in datas %}
+        <li><section class="app">
+          <article class="disponivel">
+            <button name="data_escolhida" type="submit" class="disponivel" value="{{d}}"></button>
+            <div>
+              <span>
+                {{d.strftime("%d")}}
+              </span>
+            </div>
+          </article>
+        </section>
+        </li>
+      {%else%}
+        <li><section class="app">
+          <article class="indisponivel">
+            <button name="data_escolhida" type="submit" class="indisponivel" value="{{d}}" disabled></button>
+            <div>
+              <span>
+                {{d.strftime("%d")}}
+              </span>
+            </div>
+          </article>
+        </section>
+        </li>
+      {%endif%}
+    {% endfor %}
+</ul>
+    <div class="horarios"> 
+    {% if horarios_dia %}
+      <form action="/tela_cliente/agendamento/{{barbeiro.search_id}}" autocomplete="on",  method="POST">
+      <a>Horários disponíveis</a>
+      {% for h in horarios_dia %}
+        
+        <li><button name="horario_escolhido" type="submit" value='{{h.horario_objt}}' class="nao_configurado">{{h.horario_objt}}</button></li>
+      {%endfor%}
+    {%endif%}
+    </div>
+		</div>
+      </div>
+    </div>
+
+</div>
+</body>
+</html>

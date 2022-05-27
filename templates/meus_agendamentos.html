@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tela-cliente.css') }}">
+    <title>Meus agendamentos</title>
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/d117ad3b9e.js" crossorigin="anonymous"></script>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <img src="./static/img/logo.png" alt="">
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="/tela_cliente/barbeiros"><i class="fas fa-user"></i>Barbeiros</a></li>
+            <li><a href="/deslogar"><i class="fas fa-solid fa-person-running"></i>Sair</a></li>
+        </ul> 
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="main_content"> 
+        Agendamentos
+
+        <div class ="agendamentos">
+          <form action = "/meus_agendamentos", method="POST">
+          {% if size > 0 %}
+            {% for n in range(size) %}
+              <div class="agendamentos-container">
+                  <a>{{barbeiros[n].barbershop_name}}</a><br>
+                  <a>{{datas[n]}}</a><br>
+                  <a>{{horarios[n].horario_objt}}</a><br><br>
+                  <a>{{barbeiros[n].endereco}}</a><br>
+                  <a>Status</a>
+                  {% if agendamentos[n].cancelado == True %}
+                    <span class = "cancelado"> Cancelado </span>
+                  {% elif agendamentos[n].concluido == False %}
+                    <span class = "em_andamento"> Em andamento </span>
+                    <button id="green" type="submit" value = "{{agendamentos[n].id}}" name="concluido"> Concluir </button>
+                    {%if cancelamentos[n] == True%}
+                      <button id="red" type="submit" value = "{{agendamentos[n].id}}" name="cancelado"> Cancelar </button>
+                    {%endif%}
+                    {%else%}
+                      <span class = "terminado"> Terminado </span>
+                  {%endif%}
+                  <hr>
+              </div>
+            {%endfor%}
+          {% endif %}
+          
+        </div>
+        <div class="info">
+        <div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,296 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+   background-color: #cfcac5;
+}
+
+.wrapper{
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar{
+  width: 200px;
+  height: 100%;
+  background: #614124;
+  padding: 30px 0px;
+  position: fixed;
+}
+
+.wrapper .sidebar img{
+    height: 50px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.wrapper .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+.wrapper .sidebar ul li a{
+  color: #fff;
+  display: block;
+}
+
+.wrapper .sidebar ul li a .fas{
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+  background-color: #8b5727;
+}
+    
+.wrapper .sidebar ul li:hover a{
+  color: #fff;
+}
+ 
+.wrapper .sidebar .social_media{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+  display: block;
+  width: 40px;
+  background: #8b5727;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #000;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+  width: 100%;
+  margin-left: 200px;
+}
+
+.wrapper .main_content .info{
+  margin: 20px;
+  color: #717171;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+  margin-bottom: 20px;
+}
+
+@media (max-height: 500px){
+  .social_media{
+    display: none !important;
+  }
+}
+
+/* --------------- Calendar ----------------- */
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+
+/* Month header */
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #8b5727;
+  text-align: center;
+}
+
+/* Month list */
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color:#ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  text-align: center;
+  width: 13.6%;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+/* Highlight the "current" day */
+article button.configurado {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
+
+article button.nao_configurado {
+  padding: 5px;
+  background: #ffff66;
+  color: #777 !important
+}
+
+/* checkbox calendar */
+
+article {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  float: center;
+  border: 2px solid #00e600;
+  box-sizing: border-box;
+}
+article.indisponivel{
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  float: center;
+  border: 2px solid #808080;
+  box-sizing: border-box;
+}
+
+article div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  transition: .5s ease;
+}
+
+article input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+article input.indisponivel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  cursor: default;
+}
+
+article input[type=checkbox]:checked ~ div {
+  background-color: #00e600;
+}
+
+/*______________form horario______________*/
+.horarios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.horarios input{
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.horarios input[type=time] {
+  border: 2px solid #808080; 
+  color: black;
+  font-size: 14px;
+  font-family: helvetica;
+  width: 160px;
+}
+
+/* Wrapper around the hour, minute, second, and am/pm fields as well as 
+the up and down buttons and the 'X' button */
+.horarios input[type=time]::-webkit-datetime-edit-fields-wrapper {
+  display: flex;
+}
+
+/* The space between the fields - between hour and minute, the minute and 
+second, second and am/pm */
+.horarios input[type=time]::-webkit-datetime-edit-text {
+  padding: 19px 4px;
+}
+
+/* The naming convention for the hour, minute, second, and am/pm field is
+`-webkit-datetime-edit-{field}-field` */
+
+/* Hour */
+.horarios input[type=time]::-webkit-datetime-edit-hour-field {
+  background-color: #aaa7a7;
+  border-radius: 15%;
+  padding: 19px 13px;
+}
+
+/* Minute */
+.horarios input[type=time]::-webkit-datetime-edit-minute-field {
+  background-color: #aaa7a7;
+  border-radius: 15%;
+  padding: 19px 13px;
+}
+
+/* AM/PM */
+.horarios input[type=time]::-webkit-datetime-edit-ampm-field {
+  background-color: #aaa7a7;
+  border-radius: 15%;
+  color: #fff;
+  padding: 19px 13px;
+}
+

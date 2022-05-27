@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Kapper - Index</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="main-header">
+        <nav id="navbar-container">
+            <a href="/index.html"><img class="logo" src="../static/img/logo.png" alt="Logo Kapper"></a>
+            <ul class="navbar-items">
+                <li><input type="text" class="search-bar" placeholder="Buscar"></li>
+                <li><a href="/quemsomos">Quem somos</a></li>
+                <li><a href="/login">Login</a></li>
+                <li id="singup-button"><a href="/opcao_cadastro">Cadastrar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SHOWCASE -->
+    <div class="img-container"></div>
+    <section class="section-container">
+        <div class="items-divisor">
+            <div>
+                <h2>Facilidade</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, fuga commodi ab cumque laudantium quis illo eaque eveniet sunt dolore?</p>
+            </div>
+            <div>
+                <h2>Agilidade</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, fuga commodi ab cumque laudantium quis illo eaque eveniet sunt dolore?</p>
+            </div>
+            <div>
+                <h2>Conforto</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, fuga commodi ab cumque laudantium quis illo eaque eveniet sunt dolore?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+        </div>
+        <div class="footer-rights">
+            &copy; Galera do Grupo - 2022
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://kit.fontawesome.com/d117ad3b9e.js" crossorigin="anonymous"></script>
+</body>
+</html>

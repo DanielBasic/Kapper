@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/tela_cliente-barbeiro.css" />
+    <title>Barbeiros</title>
+  </head>
+  <body>
+<div class="wrapper">
+    <div class="sidebar">
+        <img src="./static/img/logo.png" alt="">
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="/meus_agendamentos"><i class="fas fa-project-diagram"></i>Agendamentos</a></li>
+            <li><a href="/deslogar"><i class="fas fa-solid fa-person-running"></i>Sair</a></li>
+        </ul> 
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="main_content"> 
+        <div class="info">
+          <div>
+			<div class="month">
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>{{month}}<br><span style="font-size:18px">{{dates_of_month[0].year}}</span></li>
+  </ul>
+</div>
+
+    <div class="container">
+        {% for barbeiro in barbeiros %}
+          <div class="content">
+              <a class="a-container" href="/tela_cliente/agendamento/{{barbeiro.search_id}}">
+                <div class="content-barber">
+                  <img class="img" src="../static/img/barber.jpg" alt="" />
+                    <span>Nome barbearia:</span> {{barbeiro.barbershop_name}}
+                    <br />
+                    <span>Cnpj:</span> {{barbeiro.cnpj}}
+                </div>
+              </a>
+          </div>
+        {% endfor %}
+    </div>
+  </body>
+</html>

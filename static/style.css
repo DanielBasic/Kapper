@@ -1,0 +1,108 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #cfcac5;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+}
+
+.menu {
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+}
+
+.logo img {
+    margin-top: 25%;
+    width: 100%;
+}
+
+ul a {
+    text-decoration: none;
+}
+
+.menu nav ul li {
+    display: inline-block;
+    padding: 6px;
+    margin-right: 5px ;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #000;
+    list-style: none;
+}
+
+.menu nav ul li:hover {
+    transition: 0.4s all;
+    color: #fff;
+}
+
+#cadastrar-btn {
+    border: 2px solid rgb(163, 52, 52);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#cadastrar-btn:hover {
+    background-color: rgb(163, 52, 52);
+}
+
+.content {
+    max-width: 100vw;
+    min-height: auto;
+}
+
+.imagem-default img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-text {
+    width: 100%;
+    height: 250px;
+}
+
+.content-text .texts {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+}
+
+.horizontal-line {
+    width: 1px;
+    height: 200px;
+    background-image: linear-gradient(#000, #ccc)
+}
+
+footer {
+    width: 100%;
+    height: 100%;
+}
+
+footer address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons-estilizacao {
+    display: flex;
+    justify-content: center;
+}
+
+.space {
+    padding-right: 20px;
+}

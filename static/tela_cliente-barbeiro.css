@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #cfcac5;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* NAVBAR */
+.main-header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  position: static;
+  top: 0;
+}
+
+.main-header #navbar-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar-container a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.main-header #navbar-container .navbar-items {
+  display: flex;
+  list-style: none;
+  font-weight: bold;
+}
+
+.main-header #navbar-container .navbar-items li {
+  padding: 0 20px;
+}
+
+.navbar-items .search-bar {
+  padding: 3px 0;
+  padding-left: 3px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+}
+
+.navbar-items li a {
+  text-decoration: none;
+  color: #000;
+  transition: all 300ms ease;
+}
+
+.navbar-items li a:hover {
+  color: #614124;
+}
+
+.navbar-items #singup-button {
+  border: 1px solid #614124;
+  color: #000;
+  border-radius: 10px;
+  transition: all 300ms ease;
+}
+
+.navbar-items #singup-button:hover {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.content .a-container {
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+}
+
+.container .content {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  gap: 20px;
+}
+
+.content-barber {
+  background: #fff;
+  width: 250px;
+  height: 350px;
+  border-radius: 5px;
+  margin-left: 12px;
+}
+
+.content-barber a {
+  text-decoration: none;
+  color: #614124;
+  line-height: 28px;
+  cursor: text;
+}
+
+.content-barber span {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.img {
+  border-radius: 5px;
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  margin-bottom: 8px;
+}

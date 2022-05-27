@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cadastro-cliente.css') }}">
+    <title>Cadastro Cliente</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="main-header">
+        <nav id="navbar-container">
+            <img class="logo" src="./static/img/logo.png" alt="Logo Kapper">
+        </nav>
+    </header>
+
+    <!-- SHOWCASE -->
+    <div class="container">
+        <div class="content">
+            <img src="./static/img/cliente.png" alt="">
+            <form action="/cadastrar_cliente" method="POST">
+                <label>
+                    <input type="text" name="first_name" required placeholder="Nome">
+                </label>
+                <label>
+                    <input type="text" name="second_name" required placeholder="Sobrenome">
+                </label>
+                <label>
+                    <input type="text" name="document" required placeholder="CPF" maxlength="11">
+                </label>
+                <label>
+                    <input type="email" name="email" required pattern="(^[a-zA-Z0-9_.+-]+@.[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)" title="EndereÃ§o de e-mail" placeholder="E-mail">
+                </label>
+                <label>
+                    <input type="password" name="password" required placeholder="Password" minlength="6" maxlength="28" title="Senha">
+                </label>
+                <label>
+                    <input type="password" name="password_confirmation" minlength="6" maxlength="28" required placeholder="Confirmar Password" title="Confirmar senha">
+                </label>
+                <a href=""><input type="submit" value="SingUp" id="button"></a>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+        </div>
+        <div class="footer-rights">
+            &copy; Galera do Grupo - 2022
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://kit.fontawesome.com/d117ad3b9e.js" crossorigin="anonymous"></script>
+</body>
+</html>
